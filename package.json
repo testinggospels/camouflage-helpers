@@ -1,0 +1,42 @@
+{
+  "version": "0.0.3",
+  "name": "@camoflage/helpers",
+  "description": "@camoflage/helpers",
+  "author": "beltebelt",
+  "license": "MIT",
+  "exports": {
+    ".": "./dist/@camoflage/helpers.es.mjs",
+    "./cjs": "./dist/@camoflage/helpers.cjs.js",
+    "./umd": "./dist/@camoflage/helpers.umd.js"
+  },
+  "main": "./dist/@camoflage/helpers.es.mjs",
+  "module": "./dist/@camoflage/helpers.es.mjs",
+  "types": "./dist/@camoflage/helpers.es.d.mts",
+  "scripts": {
+    "build": "rm -rf dist && rollup -c",
+    "dev": "rollup -c -w",
+    "test": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.3",
+    "@types/bunyan": "^1.8.11",
+    "@types/bunyan-format": "^0.2.9",
+    "@types/luxon": "^3.3.7",
+    "@types/uuid": "^9.0.7",
+    "rollup": "^3.0.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-ts": "^3.0.0",
+    "typescript": "^5.1.6",
+    "vitest": "^0.34.1"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.15",
+    "bunyan-format": "^0.2.1",
+    "express-hbs": "^2.5.0",
+    "handlebars": "^4.7.8",
+    "luxon": "^3.4.4",
+    "uuid": "^9.0.1"
+  }
+}
