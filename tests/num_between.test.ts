@@ -1,6 +1,6 @@
 import { beforeAll, expect, test } from 'vitest'
 import Handlebars from 'handlebars'
-import { numBetween } from '@/core';
+import { numBetween } from '../src/core';
 
 let template: HandlebarsTemplateDelegate<any> | undefined;
 beforeAll(() => {

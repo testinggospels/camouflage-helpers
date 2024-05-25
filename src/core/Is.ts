@@ -1,4 +1,4 @@
-import { log } from "@/utils/logger";
+import { log } from "../utils/logger";
 import Handlebars from "handlebars";
 export const is = () => {
     Handlebars.registerHelper("is", (...args: any[]) => {

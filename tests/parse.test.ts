@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
 import { DateTime } from 'luxon'
-import Helpers from '@/index';
+import Helpers from '../src/index';
 const helpers = new Helpers(false, "off")
 
 test("parse should return the correct value from a helper", () => {

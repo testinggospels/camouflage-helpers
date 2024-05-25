@@ -1,6 +1,6 @@
 import { beforeAll, expect, test } from 'vitest'
 import Handlebars from 'handlebars'
-import { array, assign, concat } from '@/core';
+import { array, assign, concat } from '../src/core';
 
 let template: HandlebarsTemplateDelegate<any> | undefined;
 beforeAll(() => {

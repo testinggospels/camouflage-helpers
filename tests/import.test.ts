@@ -1,6 +1,6 @@
 import { beforeAll, expect, test } from 'vitest'
 import Handlebars from 'handlebars'
-import { importMock, now } from '@/core';
+import { importMock, now } from '../src/core';
 import { DateTime } from 'luxon';
 
 let template: HandlebarsTemplateDelegate<any> | undefined;

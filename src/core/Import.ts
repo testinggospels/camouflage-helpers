@@ -1,4 +1,4 @@
-import { log } from "@/utils/logger";
+import { log } from "../utils/logger";
 import Handlebars from "handlebars";
 import fs from 'fs'
 import path from 'path'

@@ -1,5 +1,5 @@
 import Handlebars from 'handlebars'
-import { log } from '@/utils/logger'
+import { log } from '../utils/logger'
 export const assign = () => {
     Handlebars.registerHelper("assign", (context: any) => {
         log.debug(`name: ${context.hash.name}`)

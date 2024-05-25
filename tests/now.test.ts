@@ -1,7 +1,7 @@
 import { beforeAll, expect, test } from 'vitest'
 import { DateTime } from 'luxon'
 import Handlebars from 'handlebars'
-import { now } from '@/core';
+import { now } from '../src/core';
 let template: HandlebarsTemplateDelegate<any> | undefined;
 beforeAll(() => {
     now()

@@ -4,17 +4,7 @@
   "description": "@camoflage/helpers",
   "author": "beltebelt",
   "license": "MIT",
-  "exports": {
-    ".": "./dist/@camoflage/helpers.es.mjs",
-    "./cjs": "./dist/@camoflage/helpers.cjs.js",
-    "./umd": "./dist/@camoflage/helpers.umd.js"
-  },
-  "main": "./dist/@camoflage/helpers.es.mjs",
-  "module": "./dist/@camoflage/helpers.es.mjs",
-  "types": "./dist/@camoflage/helpers.es.d.mts",
   "scripts": {
-    "build": "rm -rf dist && rollup -c",
-    "dev": "rollup -c -w",
     "test": "vitest",
     "prepublishOnly": "npm run build"
   },

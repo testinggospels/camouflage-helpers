@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import Helpers from '@/index';
+import Helpers from '../src/index';
 const helpers = new Helpers(true, "off")
 
 test("inject should return the output of the code", () => {

@@ -1,6 +1,6 @@
 import { beforeAll, expect, test } from 'vitest'
 import Handlebars from 'handlebars'
-import { random } from '@/core';
+import { random } from '../src/core';
 
 let template: HandlebarsTemplateDelegate<any> | undefined;
 beforeAll(() => {
