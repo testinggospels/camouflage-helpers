@@ -1,5 +1,5 @@
 import { LogLevel } from "bunyan"
-import { array, assign, concat, csvcamoflageHelper, importMock, inject, is, now, numBetween, random } from "./core"
+import { array, assign, concat, csvcamoflageHelper, importMock, inject, is, now, numBetween, random, unregisterInject } from "./core"
 import { log } from "./utils/logger"
 import bunyan from 'bunyan'
 import Handlebars from "handlebars"
@@ -39,5 +39,13 @@ export default class Helpers {
     public parse = (content: string, contextVariables: Record<any, any> = {}): string => {
         const template = Handlebars.compile(content)
         return template(contextVariables).trim()
+    }
+    public setInjectionAllowed = (allowed: boolean) => {
+        this.injectionAllowed = allowed
+        if (this.injectionAllowed) {
+            inject()
+        } else {
+            unregisterInject()
+        }
     }
 }

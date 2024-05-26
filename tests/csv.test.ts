@@ -8,7 +8,7 @@ let template: HandlebarsTemplateDelegate<any> | undefined;
 
 beforeAll(() => {
     csvcamoflageHelper()
-    template = Handlebars.compile(`{{#each (csv src='${CSV_FILE_PATH}' key='LatD' value='43')}}{{#with this}}{{State}}:{{City}}{{/with}}{{/each}}`)
+    template = Handlebars.compile(`{{#each (csv src='${CSV_FILE_PATH}' delimiter=';' key='LatD' value='43')}}{{#with this}}{{State}}:{{City}}{{/with}}{{/each}}`)
 })
 test("csv helper - fetch a city/state using LatD", () => {
     if (template) {

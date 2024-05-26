@@ -6,3 +6,7 @@ export const inject = () => {
         return result;
     });
 }
+
+export const unregisterInject = (): void => {
+    Handlebars.unregisterHelper("inject")
+}

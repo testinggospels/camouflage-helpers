@@ -18,6 +18,9 @@ export const csvcamoflageHelper = () => {
             log.error("'src' is a required parameter and has not been set.");
             return "'src' is a required parameter and has not been set.";
         }
+        if (!delimiter) {
+            log.warn("'delimiter' is missing, using default delimiter, i.e. comma. If your csv file contains a different delimiter, results might be unexpected.")
+        }
         const file = path.resolve(src);
         if (!fs.existsSync(file)) {
             log.error("CSV file not found");
