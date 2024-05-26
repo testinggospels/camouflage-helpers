@@ -41,15 +41,15 @@ export const csvcamoflageHelper = () => {
         }
 
         if (all) {
-            return json
+            return JSON.stringify(json)
         }
         if (random) {
-            return json[Math.floor(Math.random() * json.length)];
+            return JSON.stringify(json[Math.floor(Math.random() * json.length)]);
         }
         if (!key || !value) {
             log.error("If random is false, 'key' & 'value' are required parameters");
-            return null;
+            return "{}";
         }
-        return json.filter((el: any) => el[key] === value);
+        return JSON.stringify(json.filter((el: any) => el[key] === value));
     });
 }
