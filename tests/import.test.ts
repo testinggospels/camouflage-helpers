@@ -7,7 +7,7 @@ let template: HandlebarsTemplateDelegate<any> | undefined;
 beforeAll(() => {
     now()
     importMock()
-    template = Handlebars.compile("{{import path='/Users/shubhendumadhukar/Documents/camouflage/camouflage-helpers/test.mock'}}")
+    template = Handlebars.compile("{{import path='test.mock'}}")
 })
 test("import helper", () => {
     if (template) {

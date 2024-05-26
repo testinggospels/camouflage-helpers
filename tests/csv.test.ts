@@ -3,7 +3,7 @@ import { beforeAll, expect, test } from 'vitest'
 import Handlebars from 'handlebars'
 import { csvcamoflageHelper } from '../src/core';
 
-const CSV_FILE_PATH = "/Users/shubhendumadhukar/Documents/camouflage/camouflage-helpers/test.csv"
+const CSV_FILE_PATH = "test.csv"
 let template: HandlebarsTemplateDelegate<any> | undefined;
 
 beforeAll(() => {
