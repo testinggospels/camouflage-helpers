@@ -1,7 +1,14 @@
 
 import { v4 as uuidv4 } from "uuid";
 import Handlebars from "handlebars";
-
+/**
+ * Registers randomValue helper
+ * - If length of randomValue is not specified, set default length to 16
+ * - If type of randomValue is not specified, set default type to ALPHANUMERIC
+ * - If uppercase is specified, and is of ALPHABETICAL or ALPHANUMERIC type, add _UPPER to the type
+ * - If type is UUID, return UUID, else generate a random value with specified type and length
+ * @returns {void}
+*/
 export const random = () => {
     Handlebars.registerHelper("random", (context: any) => {
         const length = typeof context.hash.length === "undefined" ? 16 : context.hash.length;
@@ -16,6 +23,10 @@ export const random = () => {
         }
     });
 }
+/**
+ * Generates a random string of defined length from the character array provided.
+ * @returns {void}
+*/
 const randomString = (length: number, chars: string): string => {
     let result = "";
     if (typeof chars === "undefined") {
@@ -25,9 +36,17 @@ const randomString = (length: number, chars: string): string => {
     }
     return result;
 };
+/**
+ * Generates a random number of defined length
+ * @returns {void}
+*/
 const randomFixedInteger = (length: number): number => {
     return Math.floor(Math.pow(10, length - 1) + Math.random() * (Math.pow(10, length) - Math.pow(10, length - 1) - 1));
 };
+/**
+ * Generates character arrays depending on the types, i.e. alphanumeric, alphabetic, uppercase, numberic etc
+ * @returns {void}
+*/
 const genCharArray = (type: string): string => {
     let alphabet;
     /**

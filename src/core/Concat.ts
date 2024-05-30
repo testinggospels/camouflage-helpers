@@ -1,6 +1,11 @@
 import { log } from "../utils/logger";
 import Handlebars from "handlebars";
-
+/**
+ * Registers concat helper
+ * - concat all strings to form one string
+ * - Potentially can by concatenated by a delimiter
+ * @returns {void}
+*/
 export const concat = () => {
     Handlebars.registerHelper("concat", (...args: any[]) => {
         const context = args.pop();

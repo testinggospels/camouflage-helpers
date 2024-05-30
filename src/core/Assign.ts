@@ -1,5 +1,11 @@
 import Handlebars from 'handlebars'
 import { log } from '../utils/logger'
+/**
+ * Registers assign helper
+ * - If name or value of the variable is not included in the defined handlebar, log an error.
+ * - Store the name value pair in context.data.root
+ * @returns {void}
+*/
 export const assign = () => {
     Handlebars.registerHelper("assign", (context: any) => {
         log.debug(`name: ${context.hash.name}`)

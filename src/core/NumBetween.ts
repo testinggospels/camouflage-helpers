@@ -1,7 +1,12 @@
 
 import Handlebars from "handlebars";
 import { log } from "../utils/logger";
-
+/**
+ * Registers num_between helper
+ * - If lower or upper value is not passed, return 0
+ * - If lower value is greater than upper value, log error and return 0
+ * @returns {void}
+*/
 export const numBetween = () => {
     Handlebars.registerHelper("num_between", (context: any) => {
         if (typeof context.hash.lower === "undefined" || typeof context.hash.upper === "undefined") {

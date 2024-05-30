@@ -2,7 +2,13 @@ import { log } from "../utils/logger";
 import Handlebars from "handlebars";
 import fs from 'fs'
 import path from 'path'
-
+/**
+ * Registers import helper
+ * - Fetch the file path from the context hash
+ * - Throw error if file path not defined log appropriate error and return
+ * - evaluate the provided template and return the resulting string output
+ * @returns {void}
+*/
 export const importMock = () => {
     Handlebars.registerHelper("import", (context: any) => {
         log.debug(`importing: ${context.hash.path}`)

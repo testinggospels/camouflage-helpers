@@ -1,5 +1,11 @@
 import { log } from "../utils/logger";
 import Handlebars from "handlebars";
+/**
+ * Registers is helper
+ * Extends builtin if helper functionalities
+ * Provides support for operators to be used for comparisions
+ * @returns {void}
+*/
 export const is = () => {
     Handlebars.registerHelper("is", (...args: any[]) => {
         let left: any;

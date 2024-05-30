@@ -4,7 +4,15 @@ import Handlebars from "handlebars";
 import fs from 'fs'
 import path from 'path'
 import os from 'os'
-
+/**
+ * Registers csv helper
+ * - Fetch the file path, key, value, random and all variables from the context hash
+ * - Throw error if file path not defined log and return appropriate error
+ * - if random is true, return one random row from csv file as a stringified json array
+ * - if all is true, return all row from csv file as a stringified json array
+ * - if neither is true, send all rows from csv file as a stringified json array matching a search pattern using specified key and value
+ * @returns {void}
+*/
 export const csvcamoflageHelper = () => {
     Handlebars.registerHelper("csv", (context: any) => {
         const src = context.hash.src;
