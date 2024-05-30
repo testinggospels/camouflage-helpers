@@ -5,7 +5,7 @@ import Handlebars from "handlebars";
  * - Evaluate the response of the function passed in and return the resulting response
  * @returns {void}
 */
-export const inject = () => {
+export const inject = (): void => {
     Handlebars.registerHelper("inject", (context: any) => {
         const result = eval(context.fn(this));
         return result;

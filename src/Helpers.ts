@@ -30,8 +30,9 @@ export default class Helpers {
     }
     /**
      * Registers all the default helpers and conditionally registers inject helper
+     * @returns {void}
      */
-    private registerDefaultHelpers = () => {
+    private registerDefaultHelpers = (): void => {
         array()
         assign()
         concat()
@@ -49,21 +50,24 @@ export default class Helpers {
      * Allow registration of a custom helper:
      * @param {string} name the name which will be used to register the custom helper
      * @param {Handlebars.HelperDelegate} fn the function that defines the behavior of the custom helper
+     * @returns {void}
      */
-    public addHelper = (name: string, fn: Handlebars.HelperDelegate) => {
+    public addHelper = (name: string, fn: Handlebars.HelperDelegate): void => {
         Handlebars.registerHelper(name, fn)
     }
     /**
      * Allow removal of a registered custom helper:
      * @param {string} name the name with which a helper was previously registered
+     * @returns {void}
      */
-    public removeHelper = (name: string) => {
+    public removeHelper = (name: string): void => {
         Handlebars.unregisterHelper(name)
     }
     /**
      * Parses a provided template to a string using an optional context
      * @param {string} content template to be compiled and parsed
      * @param {Record<any, any> = {}} contextVariables json object containing additional context variables
+     * @returns {string}
      */
     public parse = (content: string, contextVariables: Record<any, any> = {}): string => {
         const template = Handlebars.compile(content)
@@ -72,8 +76,9 @@ export default class Helpers {
     /**
      * Allows enabling/disabling of inject helper
      * @param allowed enable or disable injection after instantiation
+     * @returns {void}
      */
-    public setInjectionAllowed = (allowed: boolean) => {
+    public setInjectionAllowed = (allowed: boolean): void => {
         this.injectionAllowed = allowed
         if (this.injectionAllowed) {
             inject()
